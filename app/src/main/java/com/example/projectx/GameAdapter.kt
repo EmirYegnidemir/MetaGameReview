@@ -27,7 +27,7 @@ class GameAdapter (var onClickListener : onClickListener) : RecyclerView.Adapter
         holder.binding.apply {
             tvGame.text = games[position].name
             tvScore.text = games[position].metacritic.toString()
-            var genres : String = " "
+            var genres= " "
 
             for ((index, value) in games[position].genres.withIndex()) {
                 if(index != games[position].genres.size - 1){
@@ -44,7 +44,6 @@ class GameAdapter (var onClickListener : onClickListener) : RecyclerView.Adapter
             object : View.OnClickListener {
             override fun onClick(v: View?) {
                 onClickListener.onGameClickListener(holder.adapterPosition , v )
-
             }
             })
 
