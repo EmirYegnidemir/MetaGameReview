@@ -4,19 +4,14 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectx.Models.GameModel
 import com.example.projectx.Models.GamesApiResponse
@@ -63,13 +58,6 @@ class GameFragment() : Fragment()  ,onClickListener {
         super.onCreate(savedInstanceState)
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_game, container , false)
-        /*if(resources.configuration.equals(Configuration.ORIENTATION_PORTRAIT)){
-            rvGames.layoutManager = GridLayoutManager(context, 1)
-        }
-        else{
-            rvGames.layoutManager = GridLayoutManager(context, 2)
-        }*/
-
         // Adding the games to the list:
 
         searchView = view.findViewById(R.id.idSV)
@@ -92,6 +80,7 @@ class GameFragment() : Fragment()  ,onClickListener {
         searchPlate?.setBackgroundColor(Color.TRANSPARENT)
         callApi(searchQuery)
         // page++
+
 
        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
@@ -152,35 +141,9 @@ class GameFragment() : Fragment()  ,onClickListener {
     }
 
     // TO SAVE THE STATE WHEN ROTATED*****************************************************************
-    private val KEY_RECYCLER_STATE = "recycler_state"
-    private lateinit var mBundleRecyclerViewState: Bundle
-    private lateinit var mListState: Parcelable
-
-    override fun onPause() {
-        super.onPause()
-        mBundleRecyclerViewState = Bundle()
-        mListState = rvGames.layoutManager!!.onSaveInstanceState()!!
-        mBundleRecyclerViewState.putParcelable(KEY_RECYCLER_STATE, mListState)
-
-    }
-
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        onPause()
-        Handler(Looper.getMainLooper()).postDelayed(Runnable(){
-            kotlin.run {
-                mListState = mBundleRecyclerViewState.getParcelable(KEY_RECYCLER_STATE)!!
-                rvGames.layoutManager?.onRestoreInstanceState(mListState)
-            } }, 50)
-
-        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
-            gridLayoutManager.spanCount = 2
-        }
-        else{
-            gridLayoutManager.spanCount = 1
-        }
-        rvGames.layoutManager = gridLayoutManager
-
+        (activity as MainActivity).recreate()
     }
     // TO SAVE THE STATE WHEN ROTATED ENDS*****************************************************************
 

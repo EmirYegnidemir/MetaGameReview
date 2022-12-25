@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <View
+        android:id="@+id/rectangle_"
+        android:layout_width="0dp"
+        android:layout_height="203dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/gameButton"
         android:layout_width="76dp"
@@ -19,7 +32,7 @@
         android:text="Games"
         android:textColor="#007AFF"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/imageDetail"
         app:layout_constraintEnd_toStartOf="@+id/favButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -30,11 +43,11 @@
         android:layout_width="80dp"
         android:layout_height="25dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text=" Favourite"
         android:textColor="#007AFF"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/gameButton" />
@@ -50,60 +63,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageDetail"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/gameTitle"
-            android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/sfprobold"
-            android:text="Grand Theft Auto V"
-            android:textAlignment="textEnd"
-            android:textAppearance="@style/gameDesc"
-            android:textColor="@color/white"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:typeface="normal"
-            android:visibility="visible"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeStepGranularity="2sp"
-            app:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toBottomOf="@+id/imageDetail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="369dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="204dp"
+        android:layout_width="349dp"
+        android:layout_height="121dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.988">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
 
         <com.ms.square.android.expandabletextview.ExpandableTextView
             android:id="@+id/gameDesc"
@@ -127,8 +99,9 @@
                 android:id="@id/expandable_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#666666"
+                android:textColor="@color/black"
                 android:textSize="16sp"
+                android:paddingBottom="16dp"
                 tools:layout_editor_absoluteX="10dp" />
 
             <ImageButton
@@ -143,55 +116,57 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="358dp"
-        android:layout_height="35dp"
+        android:layout_width="354dp"
+        android:layout_height="36dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="12dp"
         android:fontFamily="@font/gametextfont"
         android:text="Game Description"
-        android:textColor="@color/gd_text"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.717"
         tools:text="Game Description" />
 
     <View
         android:id="@+id/background"
-        android:layout_width="375dp"
-        android:layout_height="48dp"
+        android:layout_width="307dp"
+        android:layout_height="43dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toBottomOf="@+id/gameTitle"
+        app:layout_constraintVertical_bias="0.363" />
 
     <View
         android:id="@+id/background2"
         style="@style/Divider"
-        android:layout_width="377dp"
-        android:layout_height="50dp"
+        android:layout_width="327dp"
+        android:layout_height="43dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.302" />
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.363" />
 
     <TextView
         android:id="@+id/redditLink"
@@ -209,7 +184,7 @@
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="1.0"
@@ -220,7 +195,6 @@
         android:layout_width="131dp"
         android:layout_height="32dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:focusable="true"
@@ -232,75 +206,48 @@
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="@+id/background2"
         app:layout_constraintEnd_toEndOf="@+id/background2"
-        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/background2"
-        app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="395dp"
-        android:layout_height="0.1sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/divider"
+    <ImageView
+        android:id="@+id/imageDetail"
+        android:layout_width="306dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="52dp"
+        android:scaleType="fitXY"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="0dp"
-        android:layout_height="0.1sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="7dp"
-        android:background="@drawable/divider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background"
-        app:layout_constraintVertical_bias="0.081" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="0dp"
-        android:layout_height="0.8sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/divider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/rectangle_1"
-        android:layout_width="0dp"
-        android:layout_height="203dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rectangle_1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.967" />
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="281dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/sfprobold"
+        android:text="Grand Theft Auto V"
+        android:textAlignment="textEnd"
+        android:textAppearance="@style/gameDesc"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:visibility="visible"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

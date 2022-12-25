@@ -134,7 +134,7 @@
             app:layout_constraintStart_toStartOf="@+id/background"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.24"
-            app:maxCollapsedLines="3">
+            app:maxCollapsedLines="4">
 
             <TextView
                 android:id="@id/expandable_text"
