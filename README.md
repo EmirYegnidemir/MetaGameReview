@@ -16,4 +16,4 @@
 - Adem Soydan
 - Duhan Boblanlı
 - Oğuz Gökçen
-- Emir Yegnidemir
+- Emir Yeğnidemir
