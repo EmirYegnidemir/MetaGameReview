@@ -14,6 +14,5 @@
 ## Contributors
 
 - Adem Soydan
-- Duhan Boblanlı
 - Oğuz Gökçen
 - Emir Yeğnidemir
