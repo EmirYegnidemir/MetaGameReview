@@ -10,3 +10,10 @@
 - Add to favorites, swipe to delete (done by Oğuz Gökçen)
 - Supports landscape mode in every screen, with a different layout (I mostly dealt with this)
 - Paging support (done by Adem Soydan)
+
+## Contributors
+
+- Adem Soydan
+- Duhan Boblanlı
+- Oğuz Gökçen
+- Emir Yegnidemir
